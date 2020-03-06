@@ -6,9 +6,14 @@ Redundant and specific roles of cohesin STAG subunits in chromatin looping and t
 The scripts were tested and can be executed in a Unix and MAC OS environments.
 This Mini-tutorial explains how to execute each particular analysis.
 
+To be released.
+
+<!---
+
 ## Installation
 
 The first step is to have Python and R installed. Most Unix and MAC distributions already have this
+
 programming languages installed. If you do not have them installed please visit:
 
 - https://www.python.org/
@@ -63,5 +68,7 @@ Placeholder:
 
 - Placeholder.
 - Placeholder.
+
+--->
 
 
