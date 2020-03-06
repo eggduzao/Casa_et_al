@@ -8,7 +8,7 @@ This Mini-tutorial explains how to execute each particular analysis.
 
 To be released.
 
-<!---
+<!--- 
 
 ## Installation
 
