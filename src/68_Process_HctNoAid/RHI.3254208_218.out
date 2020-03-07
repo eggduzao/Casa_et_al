@@ -1,0 +1,16 @@
+================================================================================
+JobID = 3346296
+User = egadegu, Account = all
+Partition = fat-fmz, Nodelist = gwda042
+================================================================================
+WARN [2020-03-02T18:44:21,011]  [Globals.java:138] [main]  Development mode is enabled
+============ Job Information ===================================================
+Submitted: 2020-02-26T00:09:43
+Started: 2020-03-02T18:43:27
+Ended: 2020-03-02T18:44:21
+Elapsed: 1 mim, Limit: 720 min, Difference: 719 min
+CPUs: 8, Nodes: 1
+============= ProfiT-HPC =======================================================
+To generate the ProfiT-HPC text report, run the following command
+profit-hpc 3254208_218
+================================================================================

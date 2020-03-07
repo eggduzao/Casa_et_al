@@ -1,0 +1,24 @@
+================================================================================
+JobID = 3272796
+User = egadegu, Account = all
+Partition = fat-fmz, Nodelist = gwda048
+================================================================================
+WARN [2020-02-27T09:58:07,292]  [Globals.java:138] [main]  Development mode is enabled
+Not including fragment map
+Start preprocess
+Writing header
+Writing body
+.Randomization errors encountered: 0 no map found, 0 two different maps found
+.
+Writing footer
+
+Finished preprocess
+Done creating .hic file. Normalization not calculated due to -n flag.
+To run normalization, run: juicebox addNorm <hicfile>
+============ Job Information ===================================================
+Submitted: 2020-02-26T00:09:43
+Started: 2020-02-27T09:44:57
+Ended: 2020-02-27T10:00:29
+Elapsed: 16 mim, Limit: 720 min, Difference: 704 min
+CPUs: 8, Nodes: 1
+================================================================================

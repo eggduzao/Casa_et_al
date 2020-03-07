@@ -1,0 +1,6 @@
+Resolution improperly formatted.  It must be in the form of a number, such as 1000000 for 1M bp,
+or a number followed by 'f', such as 25f for 25 fragment
+
+real	0m16.718s
+user	0m42.987s
+sys	0m0.558s

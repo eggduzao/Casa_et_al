@@ -1,0 +1,10 @@
+
+real	12m34.098s
+user	44m12.375s
+sys	1m10.037s
+sacct: error: slurm_persist_conn_open_without_init: failed to open persistent connection to gwdu104:6819: Connection timed out
+sacct: error: slurmdbd: Sending PersistInit msg: Connection timed out
+sacct: error: Problem talking to the database: Connection timed out
+sacct: error: slurm_persist_conn_open_without_init: failed to open persistent connection to gwdu104:6819: Connection timed out
+sacct: error: slurmdbd: Sending PersistInit msg: Connection timed out
+sacct: error: Problem talking to the database: Connection timed out
