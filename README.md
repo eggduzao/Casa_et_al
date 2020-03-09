@@ -1,74 +1,122 @@
+
 # **Casa et al. Redundant and specific roles of cohesin STAG subunits in chromatin looping and transcription control.**
 
 This repository contains the *in house* computational scripts in python, R and shell that were used in the study by Casa et al.:
 Redundant and specific roles of cohesin STAG subunits in chromatin looping and transcription control.
 
-The scripts were tested and can be executed in a Unix and MAC OS environments.
+The scripts were tested and can be executed in Ubuntu (16.04 and 18.04) and MAC OS (10.11 - El Capitan and all further versions) environments.
+Furthermore this package supports all python versions >= 2.7 (Python 3.X preferred) and R >= 3.4.
+
+If you encounter any problem on executing such scripts, please send an email to: eduardo.gadegusmao@med.uni-goettingen.de
+
 This Mini-tutorial explains how to execute each particular analysis.
 
-To be released.
-
-<!--- 
 
 ## Installation
 
-The first step is to have Python and R installed. Most Unix and MAC distributions already have this
-
-programming languages installed. If you do not have them installed please visit:
+First, you need to have Python and R installed for most of the analyses. Most Unix and MAC distributions already have this programming languages installed. If you do not have them installed please visit:
 
 - https://www.python.org/
 
 - https://www.r-project.org/
 
-### Dependencies
+Finally, all scripts contained in this repository are stand-alone python / R / bash scripts. This package do not need to be installed. It can be executed given your preferred method of execution of python / R / bash scripts.
 
-When installing this software, all its dependencies will be automatically installed.
-If you encounter any problem. Please find bellow you will find the quickest way to install all the dependencies:
 
-```
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
-python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
-pip install --user pysam
-pip install --user pyBigWig
-pip install deeptools
-sudo apt-get install unzip
-curl https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2
-tar xjf samtools-1.9.tar.bz2
-cd samtools-1.9
-./configure --prefix=/where/to/install
-make
-make install
-```
+## Dependencies
 
-The program also requires a couple of R packages. After a successful installation of R please type:
+Each set of scripts (given a specific analysis) has different python and R package dependencies.
 
-```
-R
-install.packages(c("MASS", "OneR", "RColorBrewer", "colorspace", "ggplot2", "ggthemes", "gplots", "lattice", "plot3D", "plotly", "plotrix", "reshape", "scatterplot3d"))
-```
+Here I list all the dependencies with regard to the entire project:
 
-### Casa et al. scripts
+### Python Package Dependencies
 
-Casa et al.'s scripts are made available to be executed as stand-alone scripts.
+- numpy (https://numpy.org/)
 
-Please refer to **Usage Example** below for a description on how to execute each specific analysis.
+- scipy (https://www.scipy.org/)
 
-## Usage Example
+- pyBigWig (https://pypi.org/project/pyBigWig/)
 
-Placeholder
+- pysam (https://pysam.readthedocs.io/en/latest/index.html)
 
-*Placeholder*
+### R Package Dependencies
 
-```
-Placeholder
-```
+- VennDiagram (https://cran.r-project.org/web/packages/VennDiagram/index.html)
 
-Placeholder:
+- rGMAP (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6918570/)
 
-- Placeholder.
-- Placeholder.
+- hicrep (https://github.com/MonkeyLB/hicrep)
 
---->
+- gplots (https://cran.r-project.org/web/packages/gplots/index.html)
+
+- RColorBrewer (https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+
+- plot3D (https://cran.r-project.org/web/packages/plot3D/index.html)
+
+- ggplot2 (https://cran.r-project.org/web/packages/ggplot2/index.html)
+
+- lattice (https://cran.r-project.org/web/packages/lattice/index.html)
+
+- reshape (https://cran.r-project.org/web/packages/reshape/index.html)
+
+- reshape2 (https://cran.r-project.org/web/packages/reshape2/index.html)
+
+- plotrix (https://cran.r-project.org/web/packages/plotrix/index.html)
+
+- MASS (https://cran.r-project.org/web/packages/MASS/index.html)
+
+- ggthemes (https://cran.r-project.org/web/packages/ggthemes/index.html)
+
+- OneR (https://cran.r-project.org/web/packages/OneR/index.html)
+
+- scales (https://cran.r-project.org/web/packages/scales/index.html)
+
+- plyr (https://cran.r-project.org/web/packages/plyr/index.html)
+
+- ggpubr (https://cran.r-project.org/web/packages/ggpubr/index.html)
+
+- grid (https://cran.r-project.org/src/contrib/Archive/grid/)
+
+- magick (https://cran.r-project.org/web/packages/magick/index.html)
+
+### Further Software Dependencies
+
+- MACS2 (https://github.com/taoliu/MACS/wiki/Install-macs2)
+
+- samtools (http://samtools.sourceforge.net/)
+
+- bedtools (https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html)
+
+- JUICER (https://github.com/aidenlab/juicer)
+
+- juicertools (https://github.com/aidenlab/juicer/wiki/Download)
+
+- bamtools (https://github.com/pezmaster31/bamtools)
+
+- bowtie2 (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
+
+
+## Execution
+
+Each folder in src represents one analysis instance. They are numbered following the paper's progression for the ease of use.
+
+Inside each folder you will find - also numbered - scripts. The number dictates the order in which the scripts were executed for that particular analysis.
+
+In most cases you will find, for each numbered step of each numbered analysis, three scripts named:
+
+1. <Number>\_<ScriptName>\.sh : This script is intended only by users who wish to execute their scripts more than one time with multiple different input parameters in a SLURM environment. After setting the SLURM flags to your usage preference, this script will read the file generated by the script mentioned below in (2) line by line. Each line will contain on set of parameters and will correspond to a job submitted to the SLURM environment.
+
+2. <Number>\_run\_<ScriptName>\.py : Since most scripts needed to be executed several times with different input parameters, this script siply perform a number of loops setting parameters and write them on the file that is going to be read by the bash cell and executed on a SLURM computational cluster environment. Alternativelly, short analysis executes the python or R script directly without the intermediary bash script for the SLURM call.
+
+3. <Number>\_<ScriptName>\.<py or R> : In short, this is the only script actually needed to perform any analysis. This script has its parameters described in the beginning of the scripts. This script is the main script responsible for performing the analysis in which it refers to.
+
+For question / comments on running particular scripts, please send an email to: eduardo.gadegusmao@med.uni-goettingen.de
+
+
+## Citation
+
+If you use this package please cite:
+
+<Placeholder>
 
 
